@@ -1,8 +1,8 @@
 <?php
 require('database.php');
 $query = 'SELECT *
-          FROM categories
-          ORDER BY categoryID';
+          FROM Users
+          ORDER BY user_ID';
 $statement = $db->prepare($query);
 $statement->execute();
 $categories = $statement->fetchAll();
@@ -17,25 +17,32 @@ include('includes/header.php');
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
 
+            <label>Transaction_ID:</label>
+            <input type="input" name="name">
+            <br>
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
-                <option value="<?php echo $category['categoryID']; ?>">
-                    <?php echo $category['categoryName']; ?>
+                <option value="<?php echo $category['user_ID']; ?>">
+                    <?php echo $category['user_name']; ?>
                 </option>
             <?php endforeach; ?>
             </select>
             <br>
-            <label>Name:</label>
-            <input type="input" name="name">
+            <label>Subject:</label>
+            <input type="input" name="subject">
             <br>
 
-            <label>List Price:</label>
-            <input type="input" name="price">
+            <label>Amount:</label>
+            <input type="input" name="amount">
             <br>        
             
-            <label>Image:</label>
-            <input type="file" name="image" accept="image/*" />
+            <label>Currency:</label>
+            <input type="input" name="currency">
+            <br>
+
+            <label>Time Stamp:</label>
+            <input type="input" name="time_stamp">
             <br>
             
             <label>&nbsp;</label>

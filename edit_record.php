@@ -48,12 +48,12 @@ $image = $original_image; // old image from database
 // If valid, update the record in the database
 require_once('database.php');
 
-$query = 'UPDATE records
-SET categoryID = :category_id,
+$query = 'UPDATE TransactionHistory
+SET user_ID = :category_id,
 name = :name,
 price = :price,
 image = :image
-WHERE recordID = :record_id';
+WHERE transaction_ID = :record_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':name', $name);

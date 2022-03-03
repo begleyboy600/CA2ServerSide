@@ -1,68 +1,45 @@
+DROP DATABASE IF EXISTS Transaction_History_Database;
+CREATE DATABASE IF NOT EXISTS Transaction_History_Database;
+USE Transaction_History_Database;
 
---
--- Table structure for table `categories`
---
+DROP TABLE IF EXISTS TransactionHistory;
+DROP TABLE IF EXISTS Users;
 
-CREATE TABLE `categories` (
-  `categoryID` int(11) NOT NULL,
-  `categoryName` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE Users ( user_ID varchar(30) NOT NULL,
+user_name varchar(255) NOT NULL,
+PRIMARY KEY (user_ID));
 
---
--- Dumping data for table `categories`
---
+CREATE TABLE TransactionHistory ( transactionID varchar(20) NOT NULL,
+user_ID varchar(30) NOT NULL,
+subject varchar(100) NOT NULL,
+amount decimal(7,2) NOT NULL,
+currency varchar(3) NOT NULL,
+time_stamp varchar(255) NOT NULL,
+PRIMARY KEY (transactionID),
+FOREIGN KEY (user_ID) REFERENCES Users(user_ID));
 
-INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
-(1, 'Category 1'),
-(2, 'Category 2'),
-(3, 'Category 3');
+INSERT INTO Users VALUES ("32423", "Ciaran Lee");
+INSERT INTO Users VALUES ("32424", "Andrew Ferguson");
+INSERT INTO Users VALUES ("32425", "David Johnston");
 
---
--- Table structure for table `records`
---
+/*time stamp is in the format: year-month-day hours-minutes-seconds*/
 
-CREATE TABLE `records` (
-  `recordID` int(11) NOT NULL,
-  `categoryID` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `image` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO TransactionHistory VALUES ("98384720", "32423", "electricity bill", 135.53, "USD", "2021-04-13 12:18:01");
+INSERT INTO TransactionHistory VALUES ("98384721", "32423", "new shoes", 199.99, "USD", "2021-04-30 15:20:59");
+INSERT INTO TransactionHistory VALUES ("98384722", "32423", "food and beverages", 80.00, "USD", "2021-05-19 20:28:51");
+INSERT INTO TransactionHistory VALUES ("98384723", "32423", "take away", 15.00, "USD", "2021-05-24 21:02:01");
+INSERT INTO TransactionHistory VALUES ("98384724", "32423", "petrol", 85.00, "USD", "2021-05-30 10:23:42");
 
---
--- Dumping data for table `records`
---
+INSERT INTO TransactionHistory VALUES ("98384725", "32424", "new clothes", 205.85, "EUR", "2021-06-12 13:23:11");
+INSERT INTO TransactionHistory VALUES ("98384726", "32424", "diesel", 81.00, "EUR", "2021-06-13 11:44:01");
+INSERT INTO TransactionHistory VALUES ("98384727", "32424", "car repairs", 240.00, "EUR", "2021-06-23 9:32:12");
+INSERT INTO TransactionHistory VALUES ("98384728", "32424", "oil heating", 500.00, "EUR", "2021-07-03 15:49:02");
+INSERT INTO TransactionHistory VALUES ("98384729", "32424", "holiday vacation", 750.00, "EUR", "2021-07-19 10:29:59");
 
-INSERT INTO `records` (`recordID`, `categoryID`, `name`, `price`, `image`) VALUES
-(1, 1, 'Some text', '12.00', '644471.jpg'),
-(2, 1, 'Some text', '15.00', '233012.jpg'),
-(3, 1, 'Some text', '18.00', '329484.jpg'),
-(4, 1, 'Some text', '10.00', '644055.jpg'),
-(5, 2, 'Some text', '16.00', '373465.jpg'),
-(6, 2, 'Some text', '19.00', '373989.jpg'),
-(7, 2, 'Some text', '12.00', '374104.jpg'),
-(8, 2, 'Some text', '10.00', '4733.jpg'),
-(9, 2, 'Some text', '15.00', '834551.jpg'),
-(10, 3, 'Some text', '13.00', '908783.jpg'),
-(11, 3, 'Some text', '17.00', '835545.jpg'),
-(12, 3, 'Some text', '19.00', '119273.jpg');
+INSERT INTO TransactionHistory VALUES ("98384730", "32425", "hotel", 245.00, "GBP", "2021-08-02 11:23:12");
+INSERT INTO TransactionHistory VALUES ("98384731", "32425", "food and beverages", 55.00, "GBP", "2021-08-02 21:01:54");
+INSERT INTO TransactionHistory VALUES ("98384732", "32425", "new clothes", 59.99, "GBP", "2021-08-03 14:20:26");
+INSERT INTO TransactionHistory VALUES ("98384733", "32425", "drinks", 35.00, "GBP", "2021-08-03 19:34:06");
+INSERT INTO TransactionHistory VALUES ("98384734", "32425", "take away", 10.00, "GBP", "2021-08-03 23:22:03");
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `records`
---
-ALTER TABLE `records`
-  ADD PRIMARY KEY (`recordID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `records`
---
-ALTER TABLE `records`
-  MODIFY `recordID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
