@@ -1,7 +1,6 @@
 <?php
 
 // Get the product data
-$transaction_ID = filter_input(INPUT_POST, 'transaction_ID', FILTER_VALIDATE_INT);
 $user_ID = filter_input(INPUT_POST, 'user_ID', FILTER_VALIDATE_INT);
 $subject = filter_input(INPUT_POST, 'subject');
 $amount = filter_input(INPUT_POST, 'amount', FILTER_VALIDATE_FLOAT);
@@ -9,7 +8,7 @@ $currency = filter_input(INPUT_POST, 'currency');
 $time_stamp = filter_input(INPUT_POST, 'time_stamp');
 
 // Validate inputs
-if ($transaction_ID == null || $transaction_ID == false ||
+if (
     $user_ID == null || $user_ID == false||
     $subject == null || $amount == null || $amount == false ||
     $currency == null || $time_stamp == null ) {
@@ -24,11 +23,10 @@ if ($transaction_ID == null || $transaction_ID == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO TransactionHistory
-                 (transaction_ID, user_ID, subject, amount, currency, time_stamp)
+                 (user_ID, subject, amount, currency, time_stamp)
               VALUES
-                 (:transaction_ID, :user_ID, :subject, :amount, :currency, :time_stamp)";
+                 (:user_ID, :subject, :amount, :currency, :time_stamp)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':transaction_ID', $transaction_ID);
     $statement->bindValue(':user_ID', $user_ID);
     $statement->bindValue(':subject', $subject);
     $statement->bindValue(':amount', $amount);

@@ -16,10 +16,7 @@ include('includes/header.php');
         <h1>Add Record</h1>
         <form action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
-
-            <label>Transaction_ID:</label>
-            <input type="input" name="name">
-            <br>
+       
             <label>Category:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
