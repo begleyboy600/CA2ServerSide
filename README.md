@@ -4,7 +4,7 @@ A CRUD application is a computer application where CRUD is a acronym that refers
 
 This CRUD application stores all data in relation to a users transaction history, some examples are the amount of money in the transation, the currency, the timestamp, etc...
 ### Instructions
-* Install Xampp (or any other open-source cross-platform web server solution stack)(https://www.apachefriends.org/index.html)
+* Install Xampp (or any other open-source cross-platform web server solution stack)https://www.apachefriends.org/index.html
 * Create a MySQL database called php-crud in PHP MyAdmin 
 * Run the code in the sql-db.txt file in PHP MyAdmin
 * Move the PHP files in to your htdocs folder so Apache can process the PHP code
