@@ -1,4 +1,4 @@
-( "Logo Title Text 1")
+("Logo Title Text 1")
 # Bank Transaction History CRUD Application
 A CRUD application is a computer application where CRUD is a acronym that refers to the 4 functions that are considered necessary to implement a persistent storage application. CRUD stands for Create, Read, Update and Delete. 
 
