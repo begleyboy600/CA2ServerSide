@@ -1,4 +1,5 @@
 
+/*https://codepen.io/nikhil8krishnan/pen/WvYPvv*/
 /* the styles for the html elements */
 
 body {
@@ -15,15 +16,7 @@ body {
     padding: .5em 2em;
 }
 
-header {
-    margin: 0;
-    border-bottom: 2px solid black;
-}
-header h1 {
-    margin: 0;
-    padding: .5em 0;
-    color: black;
-}
+
 
 aside {
     float: left;
