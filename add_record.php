@@ -1,7 +1,7 @@
 <?php
 
 // Get the product data
-$user_ID = filter_input(INPUT_POST, 'user_ID', FILTER_VALIDATE_INT);
+$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $subject = filter_input(INPUT_POST, 'subject');
 $amount = filter_input(INPUT_POST, 'amount', FILTER_VALIDATE_FLOAT);
 $currency = filter_input(INPUT_POST, 'currency');
@@ -9,9 +9,7 @@ $time_stamp = filter_input(INPUT_POST, 'time_stamp');
 
 // Validate inputs
 if (
-    $user_ID == null || $user_ID == false||
-    $subject == null || $amount == null || $amount == false ||
-    $currency == null || $time_stamp == null ) {
+    $category_id == null || $category_id == false ) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -22,12 +20,12 @@ if (
     require_once('database.php');
 
     // Add the product to the database 
-    $query = "INSERT INTO TransactionHistory
-                 (user_ID, subject, amount, currency, time_stamp)
+    $query = "INSERT INTO records
+                 (categoryID, subject, amount, currency, time_stamp)
               VALUES
-                 (:user_ID, :subject, :amount, :currency, :time_stamp)";
+                 (:category_id, :subject, :amount, :currency, :time_stamp)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':user_ID', $user_ID);
+    $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':subject', $subject);
     $statement->bindValue(':amount', $amount);
     $statement->bindValue(':currency', $currency);

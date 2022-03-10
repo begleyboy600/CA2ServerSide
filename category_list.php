@@ -2,8 +2,8 @@
     require_once('database.php');
 
     // Get all categories
-    $query = 'SELECT * FROM Users
-              ORDER BY user_ID';
+    $query = 'SELECT * FROM categories
+              ORDER BY categoryID';
     $statement = $db->prepare($query);
     $statement->execute();
     $categories = $statement->fetchAll();
@@ -22,12 +22,12 @@ include('includes/header.php');
         </tr>
         <?php foreach ($categories as $category) : ?>
         <tr>
-            <td><?php echo $category['user_name']; ?></td>
+            <td><?php echo $category['categoryName']; ?></td>
             <td>
                 <form action="delete_category.php" method="post"
                       id="delete_product_form">
                     <input type="hidden" name="category_id"
-                           value="">
+                           value="<?php echo $category['categoryID']; ?>">
                     <input type="submit" value="Delete">
                 </form>
             </td>
@@ -45,7 +45,7 @@ include('includes/header.php');
         <input id="add_category_button" type="submit" value="Add">
     </form>
     <br>
-    <p><a href="index.php">Homepage</a></p>
+    <p><a href="index.php" class="btn btn-primary">Homepage</a></p>
 
     <?php
 include('includes/footer.php');

@@ -1,99 +1,94 @@
-body {
-    background-color: #ccc;
-}
-
-.container {
-    /* margin-top: 0; */
-    font-family: Arial, Helvetica, sans-serif;
-    width: 1000px;
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid black;
-    padding: .5em 2em;
-}
-
-section {
-    float: left;
-    width: 800PX;
-    padding-bottom: 1.5em;
-}
-
-h1 {
-    font-size: 150%;
-    margin: 0;
-    padding: .5em 0 .25em;
-}
-h2 {
-    font-size: 120%;
-    margin: 0;
-    padding: .25em 0 .5em;
-}
-h1, h2 {
-    color: #333;
-}
-ul {
-    margin: 0 0 1em 0;
-    padding: 0 0 0 2.5em;
-}
-li {
-    margin: 0;
-    padding: 0;
-}
-a {
-    color: rgb(41, 64, 124);
-    font-weight: bold;
-}
-a:hover {
-    color: rgb(208, 133, 4);
-}
-table {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-td, th {
-    border: 1px dashed black;
-    padding: .2em .5em .2em .5em;
-    vertical-align: top;
+/*
+https://codepen.io/nikhil8krishnan/pen/WvYPvv bootstrap
+https://dev.to/webdeasy/top-20-css-buttons-animations-f41 number 30 for button
+*/
+h1{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: rgba(255,255,255,0.3);
+   }
+  .tbl-content{
+    height:100px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
     text-align: left;
-}
-form {
-    margin: 0;
-}
-br {
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
+  
+  
+  /* demo styles */
+  
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  body{
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    font-family: 'Roboto', sans-serif;
+  }
+  section{
+    margin: 50px;
+  }
+  
+  
+  /* follow me template */
+  .made-with-love {
+    margin-top: 40px;
+    padding: 10px;
     clear: left;
-}
-/* the styles for classes */
-.right {
-    text-align: right;
-}
-.last_paragraph {
-	margin-bottom: 2em;	
-}
-.margin_top_increase {
-	margin-top: 1em;	
-}
-
-/********************************************************************
-* Additional styles for the record Manager application
-********************************************************************/
-#add_record_form {
-    margin: .5em 0 1em;
-}
-#add_record_form label {
-    width: 6em;
-    padding-right: 1em;
-    padding-bottom: .5em;
-    float: left;
-}
-#add_record_form input {
-    float: left;
-}
-#add_record_form input[text] {
-    width: 15em;
-}
-
-.group:after {
-    content: "";
-    display: table;
-    clear: both;
+    text-align: center;
+    font-size: 10px;
+    font-family: arial;
+    color: #fff;
+  }
+  .made-with-love i {
+    font-style: normal;
+    color: #F50057;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+  }
+  .made-with-love a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .made-with-love a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* for custom scrollbar for webkit browser*/
+  
+  ::-webkit-scrollbar {
+      width: 6px;
+  } 
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  } 
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
   }

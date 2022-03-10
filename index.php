@@ -62,8 +62,8 @@ include('includes/header.php');
 <section>
 <!-- display a table of records -->
 <h2><?php echo $category_name; ?></h2>
-<table>
-<tr>
+<table cellpadding="0" cellspacing="0" border="0">
+<tr class="tbl-header">
 <th>Subject</th>
 <th>Amount</th>
 <th>Currency</th>
@@ -72,7 +72,7 @@ include('includes/header.php');
 <th>Edit</th>
 </tr>
 <?php foreach ($records as $record) : ?>
-<tr>
+<tr class="tbl-content">
 <td><?php echo $record['subject']; ?></td>
 <td><?php echo $record['amount']; ?></td>
 <td><?php echo $record['currency']; ?></td>
@@ -95,7 +95,6 @@ value="<?php echo $record['recordID']; ?>">
 value="<?php echo $record['categoryID']; ?>">
 <input type="submit" value="Edit">
 </form></td>
-
 </tr>
 <?php endforeach; ?>
 </table>
