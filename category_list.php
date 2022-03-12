@@ -16,19 +16,19 @@ include('includes/header.php');
 ?>
     <h1>Category List</h1>
     <table>
-        <tr>
+        <tr class="tbl-header">
             <th>Name</th>
             <th>&nbsp;</th>
         </tr>
         <?php foreach ($categories as $category) : ?>
-        <tr>
+        <tr class="tbl-content">
             <td><?php echo $category['categoryName']; ?></td>
             <td>
                 <form action="delete_category.php" method="post"
                       id="delete_product_form">
                     <input type="hidden" name="category_id"
                            value="<?php echo $category['categoryID']; ?>">
-                    <input type="submit" value="Delete">
+                    <input class="delete-button" type="submit" value="Delete">
                 </form>
             </td>
         </tr>
@@ -36,16 +36,18 @@ include('includes/header.php');
     </table>
     <br>
 
-    <h2>Add Category</h2>
-    <form action="add_category.php" method="post"
+    <div class="form-style">
+    <h1>Add Category</h2>
+    <form class="form" action="add_category.php" method="post"
           id="add_category_form">
 
-        <label>Name:</label>
-        <input type="input" name="name">
-        <input id="add_category_button" type="submit" value="Add">
+        <label class="label">Name:</label>
+        <input class="name-input" type="input" name="name">
+        <input class="add-category-button" type="submit" value="Add">
     </form>
+        </div>
     <br>
-    <p><a href="index.php" class="btn btn-primary">Homepage</a></p>
+    <p><a class="homepage-button" href="index.php" class="btn btn-primary">Homepage</a></p>
 
     <?php
 include('includes/footer.php');

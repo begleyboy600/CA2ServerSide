@@ -13,12 +13,13 @@ $statement->closeCursor();
 <?php
 include('includes/header.php');
 ?>
+<div class="form-style">
         <h1>Add Record</h1>
-        <form action="add_record.php" method="post" enctype="multipart/form-data"
+        <form class="form" action="add_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
        
-              <label>Category:</label>
-            <select name="category_id">
+              <label class="label">Category:</label>
+            <select class="category-id-input-2" name="category_id">
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>">
                     <?php echo $category['categoryName']; ?>
@@ -26,27 +27,28 @@ include('includes/header.php');
             <?php endforeach; ?>
             </select>
             <br>
-            <label>Subject:</label>
-            <input type="input" name="subject" required>
+            <label class="label">Subject:</label>
+            <input class="subject-input" type="input" name="subject" required>
             <br>
 
-            <label>Amount:</label>
-            <input type="input" name="amount" required pattern="[0-9]{1-3}.[0-9]{0-2}">
+            <label class="label">Amount:</label>
+            <input class="amount-input" type="input" name="amount" required pattern="[0-9]{1-3}.[0-9]{0-2}">
             <br>        
             
-            <label>Currency:</label>
-            <input type="input" name="currency" required>
+            <label class="label">Currency:</label>
+            <input class="currency-input" type="input" name="currency" required>
             <br>
 
-            <label>Time Stamp:</label>
-            <input type="input" name="time_stamp" required>
+            <label class="label">Time Stamp:</label>
+            <input class="time-stamp-input" type="input" name="time_stamp" required>
             <br>
             
             <label>&nbsp;</label>
-            <input type="submit" value="Add Record">
+            <input class="submit-button" type="submit" value="Add Record">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+            </div>
+        <p><a class="homepage-button" href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>
