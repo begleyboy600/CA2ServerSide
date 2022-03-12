@@ -18,7 +18,7 @@ $statement1->bindValue(':category_id', $category_id);
 $statement1->execute();
 $category = $statement1->fetch();
 $statement1->closeCursor();
-$category_name = $category['categoryName'];
+$category_name = $category['categoryName'] ?? '';
 
 // Get all categories
 $queryAllCategories = 'SELECT * FROM categories
@@ -46,11 +46,11 @@ include('includes/header.php');
 
 <aside>
 <!-- display a list of categories -->
-<h2>Categories</h2>
+<h2 className=category-header>Categories</h2>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+<li className=category-list><a href=".?category_id=<?php echo $category['categoryID']; ?>">
 <?php echo $category['categoryName']; ?>
 </a>
 </li>
@@ -84,7 +84,7 @@ id="delete_record_form">
 value="<?php echo $record['recordID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Delete">
+<input type="submit" class="button" value="Delete">
 </form></td>
 
 <td><form action="edit_record_form.php" method="post"
@@ -93,14 +93,14 @@ id="delete_record_form">
 value="<?php echo $record['recordID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Edit">
+<input type="submit" class="button" value="Edit">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
 
-<p><a href="add_record_form.php">Add Record</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
+<a class="button" href="add_record_form.php">Add Record</a></p>
+<p><a class="button" href="category_list.php">Manage Categories</a></p>
 
 </section>
 <?php

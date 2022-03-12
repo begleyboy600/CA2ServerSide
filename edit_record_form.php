@@ -17,6 +17,7 @@ $statement->closeCursor();
 <?php
 include('includes/header.php');
 ?>
+<div class="form-style-8">
         <h1>Edit Product</h1>
         <form action="edit_record.php" method="post" enctype="multipart/form-data"
               id="add_record_form">
@@ -54,6 +55,7 @@ include('includes/header.php');
             <input type="submit" value="Save Changes">
             <br>
         </form>
+</div>
         <p><a href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');

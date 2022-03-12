@@ -1,9 +1,9 @@
 <!-- the head section -->
 <head>
-<title>My PHP CRUD App</title>
+<title>Bank Transaction History</title>
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 
 <!-- the body section -->
 <body>
-<header><h1>My PHP CRUD app</h1></header>
+<header><h1>Bank Transaction History</h1></header>
