@@ -15,6 +15,9 @@ This application was built using [PHP](https://www.php.net/downloads.php "PHP"),
 * Configure the database.php file to connect to your SQL database
 * Save your changes and run index.php on your prefered web browser
 
+## Link To Website
+Click this link to view the application running [here](https://mysql06.comp.dkit.ie/D00237052/CA2ServerSide/ "here")
+
 ## License
 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0 "Apache License 2.0")
 
